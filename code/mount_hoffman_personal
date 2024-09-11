@@ -1,0 +1,14 @@
+#!/bin/bash
+diskutil unmountDisk force /Users/cnl/Hoffman_Mount_Personal
+echo "Mounting Hoffman_Mount"
+sshfs jsakon@hoffman2.idre.ucla.edu://u/home/j/jsakon /Users/cnl/Hoffman_Mount_Personal -o allow_other,defer_permissions,volname=Hoffman_Mount_Personal
+
+# #!/bin/bash
+# LOCAL_RHINO_LOC=~/rhino_mount/
+# echo "ENTER PASSWORD TO YOUR COMPUTER:"
+# sudo mkdir -p $LOCAL_RHINO_LOC
+# #echo "ENTER RHINO USERNAME:"
+# #read USERNAME
+# sudo sshfs john@rhino2.psych.upenn.edu:/ -o allow_other -o volname=rhino -o defer_permissions -o transform_symlinks $LOCAL_RHINO_LOC 
+# echo "Drag the folder to the sidebar to create a shortcut..."
+# open $LOCAL_RHINO_LOC
